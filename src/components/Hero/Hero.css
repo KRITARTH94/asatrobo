@@ -1,0 +1,182 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  perspective: 1200px;
+  color: white;
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/mountain-sunset-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.12);
+  transform-style: preserve-3d;
+  will-change: transform;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.7) 45%, rgba(10, 10, 10, 0.92) 100%);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  will-change: transform;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: white;
+  animation: fadeUp 1s ease-out;
+}
+
+.highlight {
+  color: var(--secondary);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  color: #e2e8f0;
+  animation: fadeUp 1s ease-out 0.2s;
+  animation-fill-mode: both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  animation: fadeUp 1s ease-out 0.4s;
+  animation-fill-mode: both;
+}
+
+.hero-btn-outline {
+  border-color: white;
+  color: white;
+}
+
+.hero-btn-outline:hover {
+  background-color: white;
+  color: var(--primary);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Highlights strip - overlaps the bottom edge of the hero */
+.hero-highlights {
+  position: relative;
+  z-index: 3;
+  margin-top: -60px;
+}
+
+.hero-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.highlight-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-light);
+  color: var(--primary);
+}
+
+.highlight-card h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+
+.highlight-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .hero-highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+  }
+  .hero-highlights {
+    margin-top: -40px;
+  }
+  .hero-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

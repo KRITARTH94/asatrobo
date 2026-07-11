@@ -1,0 +1,5 @@
+.jobs-page {
+  padding-top: var(--header-height);
+  min-height: 100vh;
+  background-color: var(--bg-light);
+}
