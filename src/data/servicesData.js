@@ -3,7 +3,7 @@ export const servicesData = [
     id: 'solar-power',
     image: 'https://static.wixstatic.com/media/3e7eea_d25cd108a82a42a6b7a9e607df606cb4~mv2.png',
     title: 'Solar Power Plant',
-    description: 'Our Inspection Drones are equipped with a combination of sensors and revolutionizing the development, deployment, and inspection of Roof Top and Ground-Based Solar Power Plants. Equipped with thermal imaging, photo, and video cameras, drones perform a variety of GIS and Inspection roles.',
+    description: 'Our inspection drones combine thermal imaging, photo, and video sensors to accelerate the development, deployment, and inspection of rooftop and ground-mounted solar power plants. This technology delivers fast, accurate GIS and inspection data — helping operators catch issues early and keep plants running at peak efficiency.',
     longDescription: 'Our drone-based solar power plant inspection service provides rapid, high-resolution thermal and visual data of your solar assets. This enables the early detection of defective panels, localized hot spots, and structural issues. By performing these inspections efficiently from the air, we drastically reduce downtime and manual labor costs, ensuring your plant operates at peak efficiency.'
   },
   {
