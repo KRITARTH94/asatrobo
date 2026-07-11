@@ -3,7 +3,7 @@ export const productCategories = [
     id: 'fixed-wing',
     name: 'Fixed Wing',
     tagline: 'Long-range fixed-wing platforms built for endurance, coverage and efficient cruise flight.',
-    image: 'https://static.wixstatic.com/media/7177f3_9ce4927a57af44ffb596fc675fa6d68d~mv2.png',
+    image: '/products/fixed-wing-hero.jpg',
     products: [
       {
         name: 'ART-22',
