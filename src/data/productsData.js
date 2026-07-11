@@ -43,7 +43,7 @@ export const productCategories = [
           { label: 'Take Off', value: 'Vertical' },
           { label: 'Endurance', value: '1 hr' },
         ],
-        image: '/products/striver.png'
+        image: 'https://static.wixstatic.com/media/7177f3_be858df4f4234533a30a26e071956be0~mv2.png'
       },
       {
         name: 'VTOL Heavy',
@@ -55,7 +55,7 @@ export const productCategories = [
           { label: 'Take Off', value: 'Vertical' },
           { label: 'Endurance', value: '2 hr' },
         ],
-        image: '/products/vtol-heavy.png'
+        image: 'https://static.wixstatic.com/media/7177f3_ff72c844e5614ef891fd8db034fd6b95~mv2.png'
       }
     ]
   },
