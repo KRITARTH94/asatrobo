@@ -32,6 +32,7 @@ export const productCategories = [
     name: 'VTOL',
     tagline: 'Hybrid vertical take-off and landing aircraft combining fixed-wing efficiency with rotor agility.',
     image: 'https://static.wixstatic.com/media/7177f3_be858df4f4234533a30a26e071956be0~mv2.png',
+    gridImage: '/products/striver.png',
     products: [
       {
         name: 'VTOL Light(Striver)',
@@ -65,6 +66,7 @@ export const productCategories = [
     tagline: 'High-agility first-person-view drones engineered for heavy-lift and rapid-response missions.',
     image: 'https://static.wixstatic.com/media/7177f3_8d7c32a522a249cb88190ef4cd493f1f~mv2.png',
     heroImage: 'https://images.unsplash.com/photo-1654360415114-262143f0573e?auto=format&fit=crop&w=1920&q=80',
+    gridImage: '/products/fpv-drone.png',
     products: [
       {
         name: '5" FPV',
@@ -91,6 +93,7 @@ export const productCategories = [
     name: 'ASAT Agri Drone',
     tagline: 'Purpose-built agricultural spraying drones for precision farming operations.',
     image: 'https://static.wixstatic.com/media/3e7eea_254edf03387f459cbff74fef2cac8e36~mv2.png',
+    gridImage: '/products/agri-drone.jpg',
     products: [
       {
         name: 'ASAT Agri Drone',

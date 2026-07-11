@@ -29,8 +29,8 @@ const CategoryCard = ({ category }) => {
   return (
     <Link to={`/products/${category.id}`} className="category-card tilt-card" ref={tiltRef}>
       <div className="category-image-wrapper">
-        {category.image ? (
-          <img src={category.image} alt={category.name} className="category-image" />
+        {category.gridImage || category.image ? (
+          <img src={category.gridImage || category.image} alt={category.name} className="category-image" />
         ) : (
           <div className="category-image-placeholder">
             <Rocket size={40} />
