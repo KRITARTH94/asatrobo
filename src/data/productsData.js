@@ -13,7 +13,7 @@ export const productCategories = [
           { label: 'Power', value: 'Petrol Engine' },
           { label: 'Max-Altitude', value: '3000m' },
         ],
-        image: 'https://static.wixstatic.com/media/7177f3_9ce4927a57af44ffb596fc675fa6d68d~mv2.png'
+        image: '/products/art-22.png'
       },
       {
         name: 'Training UAV (Sky Surfer)',
@@ -23,7 +23,7 @@ export const productCategories = [
           { label: 'Battery', value: '2200mAh' },
           { label: 'Max-Altitude', value: '3000m' },
         ],
-        image: 'https://static.wixstatic.com/media/7177f3_b9a01e7a477c4487958b4a51b26120ec~mv2.png'
+        image: '/products/sky-surfer.png'
       }
     ]
   },
