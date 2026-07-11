@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>© 2020 ASATRobo Technologies Pvt. Ltd.</p>
+          <p>© All Right Reserved.</p>
           <a href="#home" className="back-to-top">
             Back to top <ArrowUp size={14} />
           </a>
