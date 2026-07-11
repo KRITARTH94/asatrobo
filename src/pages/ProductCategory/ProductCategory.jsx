@@ -25,8 +25,8 @@ const ProductCategory = () => {
   return (
     <main className="category-details-page">
       <div className="category-hero">
-        {category.image ? (
-          <div className="category-hero-bg" style={{ backgroundImage: `url(${category.image})` }}></div>
+        {category.heroImage || category.image ? (
+          <div className="category-hero-bg category-hero-bg-animated" style={{ backgroundImage: `url(${category.heroImage || category.image})` }}></div>
         ) : (
           <div className="category-hero-bg category-hero-bg-placeholder"></div>
         )}

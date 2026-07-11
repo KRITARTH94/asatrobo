@@ -64,6 +64,7 @@ export const productCategories = [
     name: 'FPV',
     tagline: 'High-agility first-person-view drones engineered for heavy-lift and rapid-response missions.',
     image: 'https://static.wixstatic.com/media/7177f3_8d7c32a522a249cb88190ef4cd493f1f~mv2.png',
+    heroImage: 'https://images.unsplash.com/photo-1654360415114-262143f0573e?auto=format&fit=crop&w=1920&q=80',
     products: [
       {
         name: '5" FPV',

@@ -9,6 +9,7 @@
   height: 400px;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .category-hero-bg {
@@ -20,6 +21,29 @@
   background-size: cover;
   background-position: center;
   z-index: 1;
+}
+
+.category-hero-bg-animated {
+  animation: hero-bg-drift 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes hero-bg-drift {
+  0% {
+    transform: scale(1.1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.22) translate(-2%, -1.5%);
+  }
+  100% {
+    transform: scale(1.1) translate(0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-hero-bg-animated {
+    animation: none;
+  }
 }
 
 .category-hero-bg::after {
