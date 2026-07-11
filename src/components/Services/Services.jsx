@@ -8,7 +8,6 @@ const Services = () => {
     <section className="section services-section" id="services">
       <div className="container">
         <div className="section-header">
-          <span className="eyebrow eyebrow-center">What We Do</span>
           <h2 className="section-title">Our Services</h2>
         </div>
 
