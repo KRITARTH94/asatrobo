@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
-const Contact = () => {
+const Contact = ({ hideTitle }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
@@ -13,7 +13,7 @@ const Contact = () => {
     <section className="section contact-section" id="contact">
       <div className="container">
         <div className="contact-container">
-          <h2 className="contact-title">Get in Touch</h2>
+          {!hideTitle && <h2 className="contact-title">Get in Touch</h2>}
 
           {submitted ? (
             <div className="success-message">

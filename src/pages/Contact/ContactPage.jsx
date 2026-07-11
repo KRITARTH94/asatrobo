@@ -9,7 +9,7 @@ const ContactPage = () => {
 
   return (
     <main className="contact-page">
-      <Contact />
+      <Contact hideTitle />
     </main>
   );
 };
