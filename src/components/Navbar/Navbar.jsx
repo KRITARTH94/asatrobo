@@ -62,6 +62,17 @@ const Navbar = () => {
               className="logo-img"
             />
           </Link>
+          <div className="navbar-badges">
+            <div className="navbar-badge">
+              <img src="https://static.wixstatic.com/media/7177f3_c670597f16f246279d3c164465c9e844~mv2.png" alt="IIT Kanpur" />
+            </div>
+            <div className="navbar-badge">
+              <img src="https://static.wixstatic.com/media/7177f3_b2f2bd44ba7247b28e86034b1e3001b6~mv2.png" alt="Innovation and Incubation Centre, IIT Kanpur" />
+            </div>
+            <div className="navbar-badge">
+              <img src="https://static.wixstatic.com/media/7177f3_79ff79a2d0da4a2a873a78cabb7405e6~mv2.png" alt="C3iHub" />
+            </div>
+          </div>
         </div>
 
         {/* Desktop Menu */}
