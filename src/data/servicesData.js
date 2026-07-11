@@ -26,42 +26,6 @@ export const servicesData = [
     title: 'Mapping',
     description: '"Drone as a Service" (DaaS) involves providing drone-based solutions to clients for various applications like aerial surving and data collection , geospatial analytics, data processing and integration etc.',
     longDescription: 'Precision mapping and aerial surveying form the backbone of modern GIS and construction planning. Utilizing RTK/PPK-enabled drones, we deliver highly accurate orthomosaics, digital elevation models (DEMs), and point clouds. Whether for agriculture monitoring, land development, or topographical surveying, our mapping solutions provide actionable geospatial intelligence.'
-  },
-  {
-    id: 'agriculture',
-    image: 'https://static.wixstatic.com/media/3e7eea_254edf03387f459cbff74fef2cac8e36~mv2.png',
-    title: 'Agriculture',
-    description: 'Our ASAT AGRI series drones are designed for efficient pesticide and fertilizer spraying, seed broadcasting, and dispersal. Built with dual redundant IMU and obstacle avoidance, they offer both manual and fully autonomous modes.',
-    longDescription: 'ASAT AGRI drones transform modern farming. With features like Return to Home, Auto Landing, and Low Battery Warnings, they are safe and reliable. We offer two flagship models: ASAT AGRI 10 (10L capacity) and ASAT AGRI 20 (20L capacity), both designed for maximum efficiency.',
-    isCustomLayout: true,
-    features: ['Manual / Fully Autonomous', 'Dual GPS / Dual Redundant IMU', 'Return to Home, Auto Landing', 'Low Battery Warning', 'Obstacle Avoidance (Optional)'],
-    applications: ['Pesticide Spraying', 'Fertilizer Spraying', 'Seed Broadcaster', 'Seed Dispersal'],
-    models: [
-      {
-        name: 'ASAT AGRI 10',
-        specs: [
-          { label: 'Spray Capacity', value: '10L' },
-          { label: 'Flight Time', value: 'Approx. 20mins' },
-          { label: 'Range', value: '3000m' },
-          { label: 'Speed', value: '0-10m/s' },
-          { label: 'Flow Rate', value: '1.2-2L/min' },
-          { label: 'Spray width', value: '4-5m' },
-          { label: 'Max. Take off Weight', value: '30Kg' }
-        ]
-      },
-      {
-        name: 'ASAT AGRI 20',
-        specs: [
-          { label: 'Spray Capacity', value: '20L' },
-          { label: 'Flight Time', value: 'Approx. 20mins' },
-          { label: 'Range', value: '3000m' },
-          { label: 'Speed', value: '0-10m/s' },
-          { label: 'Flow Rate', value: '1.2-2L/min' },
-          { label: 'Spray width', value: '7-8m' },
-          { label: 'Max. Take off Weight', value: '55Kg' }
-        ]
-      }
-    ]
   }
 ];
 

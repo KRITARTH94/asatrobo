@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, Zap, Crosshair } from 'lucide-react';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import { getServiceById } from '../../data/servicesData';
 import Contact from '../../components/Contact/Contact';
 import './ServiceDetails.css';
-import './Agriculture.css';
 
 const ServiceDetails = () => {
   const { serviceId } = useParams();
@@ -46,58 +45,20 @@ const ServiceDetails = () => {
             <p className="service-long-text">{service.longDescription}</p>
             
             
-            {service.isCustomLayout ? (
-              <div className="custom-service-layout">
-                <div className="features-grid">
-                  <div className="feature-list-box">
-                    <h3><Zap size={24} color="var(--secondary)" /> Features</h3>
-                    <ul>
-                      {service.features.map((f, i) => <li key={i}><CheckCircle2 size={16} /> {f}</li>)}
-                    </ul>
-                  </div>
-                  <div className="feature-list-box">
-                    <h3><Crosshair size={24} color="var(--secondary)" /> Applications</h3>
-                    <ul>
-                      {service.applications.map((a, i) => <li key={i}><CheckCircle2 size={16} /> {a}</li>)}
-                    </ul>
-                  </div>
-                </div>
-                
-                <h3 className="models-title">Drone Models</h3>
-                <div className="models-grid">
-                  {service.models.map((model, i) => (
-                    <div className="model-card" key={i}>
-                      <h4>{model.name}</h4>
-                      <table className="specs-table">
-                        <tbody>
-                          {model.specs.map((spec, j) => (
-                            <tr key={j}>
-                              <td className="spec-label">{spec.label}</td>
-                              <td className="spec-value">{spec.value}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  ))}
-                </div>
+            <div className="benefits-list">
+              <div className="benefit-item">
+                <CheckCircle2 className="benefit-icon" />
+                <span>Cost-effective and time-saving solutions</span>
               </div>
-            ) : (
-              <div className="benefits-list">
-                <div className="benefit-item">
-                  <CheckCircle2 className="benefit-icon" />
-                  <span>Cost-effective and time-saving solutions</span>
-                </div>
-                <div className="benefit-item">
-                  <CheckCircle2 className="benefit-icon" />
-                  <span>High-resolution actionable data</span>
-                </div>
-                <div className="benefit-item">
-                  <CheckCircle2 className="benefit-icon" />
-                  <span>Zero safety risk for human personnel</span>
-                </div>
+              <div className="benefit-item">
+                <CheckCircle2 className="benefit-icon" />
+                <span>High-resolution actionable data</span>
               </div>
-            )}
+              <div className="benefit-item">
+                <CheckCircle2 className="benefit-icon" />
+                <span>Zero safety risk for human personnel</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

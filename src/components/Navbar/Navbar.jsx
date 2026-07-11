@@ -32,9 +32,7 @@ const Navbar = () => {
       name: 'Services', 
       href: '/#services',
       dropdown: [
-        { name: 'AgriDrones', href: '/services/agriculture' },
         { name: 'Solar Power', href: '/services/solar-power' },
-        { name: 'Agriculture', href: '/services/agriculture' },
         { name: 'Building Inspection', href: '/services/building-inspection' },
         { name: 'Oil & Gas', href: '/services/flare-and-chimney' }
       ]
