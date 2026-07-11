@@ -66,7 +66,7 @@ export const productCategories = [
     image: 'https://static.wixstatic.com/media/7177f3_8d7c32a522a249cb88190ef4cd493f1f~mv2.png',
     products: [
       {
-        name: 'FPV',
+        name: '5" FPV',
         specs: [
           { label: 'Weight', value: '750gm' },
           { label: 'Dimension', value: '35x46x7cm' },
