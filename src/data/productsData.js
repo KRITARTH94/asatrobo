@@ -81,7 +81,6 @@ export const productCategories = [
       }
     ],
     subSections: [
-      { id: '5-inch', name: '5" FPV', comingSoon: true, products: [] },
       { id: '7-inch', name: '7" FPV', comingSoon: true, products: [] },
       { id: '10-inch', name: '10" FPV', comingSoon: true, products: [] }
     ]
