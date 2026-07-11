@@ -18,13 +18,14 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '/#home' },
-    { 
-      name: 'Custom Drones', 
+    {
+      name: 'Custom Drones',
       href: '/#drones',
       dropdown: [
-        { name: 'Fixed Wings', href: '#' },
-        { name: 'VTOL', href: '#' },
-        { name: 'FPV', href: '#' }
+        { name: 'Fixed Wing', href: '/products/fixed-wing' },
+        { name: 'VTOL', href: '/products/vtol' },
+        { name: 'FPV', href: '/products/fpv' },
+        { name: 'ASAT Agri Drone', href: '/products/agri-drone' }
       ]
     },
     { 
