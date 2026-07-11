@@ -115,6 +115,24 @@
   gap: 2rem;
 }
 
+.products-grid-2col {
+  grid-template-columns: repeat(2, minmax(0, 360px));
+}
+
+@media (max-width: 700px) {
+  .products-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.coming-soon-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
 .coming-soon-panel {
   background-color: white;
   border-radius: 0.75rem;

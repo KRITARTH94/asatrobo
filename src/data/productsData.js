@@ -78,7 +78,7 @@ export const productCategories = [
           { label: 'Load Flight time', value: '15min' },
           { label: 'Take Off', value: 'Vertical' },
         ],
-        image: 'https://static.wixstatic.com/media/7177f3_8d7c32a522a249cb88190ef4cd493f1f~mv2.png'
+        image: '/products/fpv-drone.png'
       }
     ],
     subSections: [
@@ -101,7 +101,7 @@ export const productCategories = [
           { label: 'Speed', value: '0-10m/s' },
           { label: 'Flow Rate', value: '1.2 L/min.​' },
         ],
-        image: 'https://static.wixstatic.com/media/3e7eea_254edf03387f459cbff74fef2cac8e36~mv2.png'
+        image: '/products/agri-drone.jpg'
       }
     ]
   },

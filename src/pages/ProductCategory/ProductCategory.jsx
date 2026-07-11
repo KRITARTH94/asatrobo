@@ -41,14 +41,18 @@ const ProductCategory = () => {
       </div>
 
       <div className="container category-content-container">
-        <ProductGroup products={category.products} badgeLabel={category.name} />
-
-        {category.subSections && category.subSections.map((sub) => (
-          <div className="product-subsection" key={sub.id}>
-            <h3 className="subsection-title">{sub.name}</h3>
-            <ProductGroup products={sub.products} badgeLabel={sub.name} compact />
+        {category.subSections ? (
+          <div className="products-grid products-grid-2col">
+            {category.products.map((product, index) => (
+              <ProductCard product={product} badgeLabel={category.name} key={`product-${index}`} />
+            ))}
+            {category.subSections.map((sub) => (
+              <ComingSoonCard label={sub.name} key={sub.id} />
+            ))}
           </div>
-        ))}
+        ) : (
+          <ProductGroup products={category.products} badgeLabel={category.name} />
+        )}
       </div>
     </main>
   );
@@ -74,6 +78,16 @@ const ProductGroup = ({ products, badgeLabel, compact }) => {
     </div>
   );
 };
+
+const ComingSoonCard = ({ label }) => (
+  <div className="coming-soon-panel coming-soon-panel-compact">
+    <Rocket size={26} />
+    <span className="coming-soon-tag">{label}</span>
+    <h3>Coming Soon</h3>
+    <p>We're finalizing the lineup for this category. Check back soon, or get in touch to discuss your requirements.</p>
+    <Link to="/#contact" className="btn btn-primary">Contact Us</Link>
+  </div>
+);
 
 const ProductCard = ({ product, badgeLabel }) => {
   const tiltRef = useTilt({ max: 8, scale: 1.03 });
