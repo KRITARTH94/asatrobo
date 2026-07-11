@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { Mail, Phone, MapPin, Globe, MessageCircle, Camera, ArrowUp } from 'lucide-react';
+import { Globe, MessageCircle, Camera, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -32,35 +32,6 @@ const Footer = () => {
               <a href="#" className="social-link"><MessageCircle size={20} /></a>
               <a href="#" className="social-link"><Camera size={20} /></a>
             </div>
-          </div>
-          
-          <div className="footer-links">
-            <h4 className="footer-title">Quick Links</h4>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#drones">Custom Drones</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="/jobs">Jobs</a></li>
-              <li><a href="#book">Book Online</a></li>
-            </ul>
-          </div>
-          
-          <div className="footer-contact">
-            <h4 className="footer-title">Contact Us</h4>
-            <ul className="contact-info">
-              <li>
-                <span className="contact-icon-wrapper"><MapPin size={16} /></span>
-                <span>IIT Kanpur, Uttar Pradesh, India</span>
-              </li>
-              <li>
-                <span className="contact-icon-wrapper"><Phone size={16} /></span>
-                <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a>
-              </li>
-              <li>
-                <span className="contact-icon-wrapper"><Mail size={16} /></span>
-                <a href="mailto:info@asatrobo.com">info@asatrobo.com</a>
-              </li>
-            </ul>
           </div>
         </div>
 
