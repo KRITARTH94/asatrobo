@@ -80,13 +80,6 @@ const Hero = () => {
               <span className="highlight">Get your own</span> <br />
               Customized Multicopters
             </h1>
-            <p className="hero-subtitle" style={{ textAlign: 'justify' }}>
-              We are an IIT Kanpur incubated company, engaged in making Unmanned Aerial Vehicle (UAV) and its subsystems. We design custom drones and give integration support. We also provide reliable DaaS(Drone as a Service) to our customers. The company is made up of industry veterans who have years of experience in the aerospace field.
-            </p>
-            <div className="hero-actions">
-              <a href="#drones" className="btn btn-primary">Explore Our Drones</a>
-              <a href="#contact" className="btn btn-outline hero-btn-outline">Contact Us</a>
-            </div>
           </div>
         </div>
       </section>
