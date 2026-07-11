@@ -95,7 +95,6 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Link to="/#book" className="btn btn-primary btn-book">Book Online</Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -138,15 +137,6 @@ const Navbar = () => {
               )}
             </li>
           ))}
-          <li>
-            <Link 
-              to="/#book" 
-              className="btn btn-primary"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Book Online
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>

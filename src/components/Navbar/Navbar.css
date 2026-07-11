@@ -151,11 +151,6 @@
   color: var(--secondary);
 }
 
-.btn-book {
-  padding: 0.65rem 1.5rem;
-  font-size: 0.85rem;
-}
-
 .mobile-menu-btn {
   background: none;
   border: none;
