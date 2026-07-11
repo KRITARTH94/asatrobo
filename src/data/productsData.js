@@ -29,6 +29,14 @@ export const productCategories = [
     ]
   },
   {
+    id: 'quadcopter',
+    name: 'Quadcopter',
+    tagline: 'Compact multi-rotor platforms for agile, stable flight in tight spaces.',
+    image: null,
+    comingSoon: true,
+    products: []
+  },
+  {
     id: 'vtol',
     name: 'VTOL',
     tagline: 'Hybrid vertical take-off and landing aircraft combining fixed-wing efficiency with rotor agility.',
@@ -108,14 +116,6 @@ export const productCategories = [
         image: '/products/agri-drone.jpg'
       }
     ]
-  },
-  {
-    id: 'quadcopter',
-    name: 'Quadcopter',
-    tagline: 'Compact multi-rotor platforms for agile, stable flight in tight spaces.',
-    image: null,
-    comingSoon: true,
-    products: []
   }
 ];
 
