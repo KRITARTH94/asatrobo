@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Rocket } from 'lucide-react';
 import { getCategoryById } from '../../data/productsData';
+import { useTilt } from '../../hooks/useTilt';
 import './ProductCategory.css';
 
 const ProductCategory = () => {
@@ -68,24 +69,33 @@ const ProductGroup = ({ products, badgeLabel, compact }) => {
   return (
     <div className="products-grid">
       {products.map((product, index) => (
-        <div className="product-card" key={index}>
-          <div className="product-image-wrapper">
-            <img src={product.image} alt={product.name} className="product-image" />
-            <div className="product-badge">{badgeLabel}</div>
-          </div>
-          <div className="product-content">
-            <h3 className="product-title">{product.name}</h3>
-            <ul className="product-specs">
-              {product.specs.map((spec, sIndex) => (
-                <li key={sIndex} className="spec-item">
-                  <span className="spec-label">{spec.label}</span>
-                  <span className="spec-value">{spec.value}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <ProductCard product={product} badgeLabel={badgeLabel} key={index} />
       ))}
+    </div>
+  );
+};
+
+const ProductCard = ({ product, badgeLabel }) => {
+  const tiltRef = useTilt({ max: 8, scale: 1.03 });
+
+  return (
+    <div className="product-card tilt-card" ref={tiltRef}>
+      <div className="product-image-wrapper">
+        <img src={product.image} alt={product.name} className="product-image" />
+        <div className="product-badge">{badgeLabel}</div>
+      </div>
+      <div className="product-content">
+        <h3 className="product-title">{product.name}</h3>
+        <ul className="product-specs">
+          {product.specs.map((spec, sIndex) => (
+            <li key={sIndex} className="spec-item">
+              <span className="spec-label">{spec.label}</span>
+              <span className="spec-value">{spec.value}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <span className="tilt-glare"></span>
     </div>
   );
 };

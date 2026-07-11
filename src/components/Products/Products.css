@@ -29,12 +29,11 @@
   overflow: hidden;
   background-color: white;
   box-shadow: var(--shadow-md);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: transform 0.15s ease-out, box-shadow var(--transition-normal);
   border: 1px solid rgba(0,0,0,0.08);
 }
 
 .category-card:hover {
-  transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
   color: inherit;
 }

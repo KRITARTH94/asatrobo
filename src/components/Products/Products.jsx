@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Rocket } from 'lucide-react';
 import { productCategories } from '../../data/productsData';
+import { useTilt } from '../../hooks/useTilt';
 import './Products.css';
 
 const Products = () => {
@@ -14,29 +15,38 @@ const Products = () => {
 
         <div className="category-grid">
           {productCategories.map((category) => (
-            <Link to={`/products/${category.id}`} className="category-card" key={category.id}>
-              <div className="category-image-wrapper">
-                {category.image ? (
-                  <img src={category.image} alt={category.name} className="category-image" />
-                ) : (
-                  <div className="category-image-placeholder">
-                    <Rocket size={40} />
-                  </div>
-                )}
-                {category.comingSoon && <span className="category-badge">Coming Soon</span>}
-              </div>
-              <div className="category-content">
-                <h3 className="category-title">{category.name}</h3>
-                <p className="category-tagline">{category.tagline}</p>
-                <span className="category-link">
-                  View Products <ArrowRight size={16} />
-                </span>
-              </div>
-            </Link>
+            <CategoryCard category={category} key={category.id} />
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+const CategoryCard = ({ category }) => {
+  const tiltRef = useTilt({ max: 8, scale: 1.03 });
+
+  return (
+    <Link to={`/products/${category.id}`} className="category-card tilt-card" ref={tiltRef}>
+      <div className="category-image-wrapper">
+        {category.image ? (
+          <img src={category.image} alt={category.name} className="category-image" />
+        ) : (
+          <div className="category-image-placeholder">
+            <Rocket size={40} />
+          </div>
+        )}
+        {category.comingSoon && <span className="category-badge">Coming Soon</span>}
+      </div>
+      <div className="category-content">
+        <h3 className="category-title">{category.name}</h3>
+        <p className="category-tagline">{category.tagline}</p>
+        <span className="category-link">
+          View Products <ArrowRight size={16} />
+        </span>
+      </div>
+      <span className="tilt-glare"></span>
+    </Link>
   );
 };
 

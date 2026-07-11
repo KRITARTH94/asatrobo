@@ -202,3 +202,34 @@ img {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
+/* 3D tilt card utility — pairs with src/hooks/useTilt.js */
+.tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transform: perspective(1000px)
+    rotateX(var(--tilt-rx, 0deg))
+    rotateY(var(--tilt-ry, 0deg))
+    scale3d(var(--tilt-scale, 1), var(--tilt-scale, 1), var(--tilt-scale, 1));
+}
+
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: var(--glare-opacity, 0);
+  background: radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%), rgba(255, 255, 255, 0.45), transparent 60%);
+  transition: opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none) {
+  .tilt-card {
+    transform: none !important;
+  }
+  .tilt-glare {
+    display: none;
+  }
+}

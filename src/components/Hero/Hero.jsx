@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Cpu, Settings2, ShieldCheck, Users } from 'lucide-react';
+import { useTilt } from '../../hooks/useTilt';
 import './Hero.css';
 
 const highlights = [
@@ -83,21 +84,28 @@ const Hero = () => {
 
       <div className="hero-highlights">
         <div className="container hero-highlights-grid">
-          {highlights.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div className="highlight-card" key={index}>
-                <div className="highlight-icon"><Icon size={22} /></div>
-                <div>
-                  <h4>{item.label}</h4>
-                  <p>{item.desc}</p>
-                </div>
-              </div>
-            );
-          })}
+          {highlights.map((item, index) => (
+            <HighlightCard item={item} key={index} />
+          ))}
         </div>
       </div>
     </>
+  );
+};
+
+const HighlightCard = ({ item }) => {
+  const Icon = item.icon;
+  const tiltRef = useTilt({ max: 6, scale: 1.02 });
+
+  return (
+    <div className="highlight-card tilt-card" ref={tiltRef}>
+      <div className="highlight-icon"><Icon size={22} /></div>
+      <div>
+        <h4>{item.label}</h4>
+        <p>{item.desc}</p>
+      </div>
+      <span className="tilt-glare"></span>
+    </div>
   );
 };
 
