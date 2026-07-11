@@ -40,38 +40,53 @@ const ProductCategory = () => {
       </div>
 
       <div className="container category-content-container">
-        {category.products.length === 0 ? (
-          <div className="coming-soon-panel">
-            <Rocket size={36} />
-            <h3>Coming Soon</h3>
-            <p>We're finalizing the lineup for this category. Check back soon, or get in touch to discuss your requirements.</p>
-            <Link to="/#contact" className="btn btn-primary">Contact Us</Link>
+        <ProductGroup products={category.products} badgeLabel={category.name} />
+
+        {category.subSections && category.subSections.map((sub) => (
+          <div className="product-subsection" key={sub.id}>
+            <h3 className="subsection-title">{sub.name}</h3>
+            <ProductGroup products={sub.products} badgeLabel={sub.name} compact />
           </div>
-        ) : (
-          <div className="products-grid">
-            {category.products.map((product, index) => (
-              <div className="product-card" key={index}>
-                <div className="product-image-wrapper">
-                  <img src={product.image} alt={product.name} className="product-image" />
-                  <div className="product-badge">{category.name}</div>
-                </div>
-                <div className="product-content">
-                  <h3 className="product-title">{product.name}</h3>
-                  <ul className="product-specs">
-                    {product.specs.map((spec, sIndex) => (
-                      <li key={sIndex} className="spec-item">
-                        <span className="spec-label">{spec.label}</span>
-                        <span className="spec-value">{spec.value}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+        ))}
       </div>
     </main>
+  );
+};
+
+const ProductGroup = ({ products, badgeLabel, compact }) => {
+  if (products.length === 0) {
+    return (
+      <div className={`coming-soon-panel ${compact ? 'coming-soon-panel-compact' : ''}`}>
+        <Rocket size={compact ? 26 : 36} />
+        <h3>Coming Soon</h3>
+        <p>We're finalizing the lineup for this category. Check back soon, or get in touch to discuss your requirements.</p>
+        <Link to="/#contact" className="btn btn-primary">Contact Us</Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="products-grid">
+      {products.map((product, index) => (
+        <div className="product-card" key={index}>
+          <div className="product-image-wrapper">
+            <img src={product.image} alt={product.name} className="product-image" />
+            <div className="product-badge">{badgeLabel}</div>
+          </div>
+          <div className="product-content">
+            <h3 className="product-title">{product.name}</h3>
+            <ul className="product-specs">
+              {product.specs.map((spec, sIndex) => (
+                <li key={sIndex} className="spec-item">
+                  <span className="spec-label">{spec.label}</span>
+                  <span className="spec-value">{spec.value}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };
 

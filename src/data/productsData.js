@@ -78,6 +78,11 @@ export const productCategories = [
         ],
         image: 'https://static.wixstatic.com/media/7177f3_8d7c32a522a249cb88190ef4cd493f1f~mv2.png'
       }
+    ],
+    subSections: [
+      { id: '5-inch', name: '5" FPV', comingSoon: true, products: [] },
+      { id: '7-inch', name: '7" FPV', comingSoon: true, products: [] },
+      { id: '10-inch', name: '10" FPV', comingSoon: true, products: [] }
     ]
   },
   {
