@@ -1,7 +1,8 @@
 .footer {
   position: relative;
-  background-color: var(--primary-deep);
-  color: white;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
 
@@ -15,21 +16,21 @@
   gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.75rem;
-  color: #8a8a8f;
+  color: var(--secondary);
 }
 
 .back-to-top {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  color: #a8a8ad;
+  color: var(--secondary);
   font-size: 0.75rem;
   font-weight: 500;
   transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
 .back-to-top:hover {
-  color: white;
+  color: var(--text-dark);
   transform: translateY(-2px);
 }
 
