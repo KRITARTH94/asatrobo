@@ -98,6 +98,14 @@ export const productCategories = [
         image: 'https://static.wixstatic.com/media/3e7eea_254edf03387f459cbff74fef2cac8e36~mv2.png'
       }
     ]
+  },
+  {
+    id: 'quadcopter',
+    name: 'Quadcopter',
+    tagline: 'Compact multi-rotor platforms for agile, stable flight in tight spaces.',
+    image: null,
+    comingSoon: true,
+    products: []
   }
 ];
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Rocket } from 'lucide-react';
 import { productCategories } from '../../data/productsData';
 import './Products.css';
 
@@ -16,7 +16,14 @@ const Products = () => {
           {productCategories.map((category) => (
             <Link to={`/products/${category.id}`} className="category-card" key={category.id}>
               <div className="category-image-wrapper">
-                <img src={category.image} alt={category.name} className="category-image" />
+                {category.image ? (
+                  <img src={category.image} alt={category.name} className="category-image" />
+                ) : (
+                  <div className="category-image-placeholder">
+                    <Rocket size={40} />
+                  </div>
+                )}
+                {category.comingSoon && <span className="category-badge">Coming Soon</span>}
               </div>
               <div className="category-content">
                 <h3 className="category-title">{category.name}</h3>

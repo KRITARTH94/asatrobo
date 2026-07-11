@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Rocket } from 'lucide-react';
 import { getCategoryById } from '../../data/productsData';
 import './ProductCategory.css';
 
@@ -25,7 +25,11 @@ const ProductCategory = () => {
   return (
     <main className="category-details-page">
       <div className="category-hero">
-        <div className="category-hero-bg" style={{ backgroundImage: `url(${category.image})` }}></div>
+        {category.image ? (
+          <div className="category-hero-bg" style={{ backgroundImage: `url(${category.image})` }}></div>
+        ) : (
+          <div className="category-hero-bg category-hero-bg-placeholder"></div>
+        )}
         <div className="category-hero-content container">
           <button onClick={() => navigate(-1)} className="back-btn">
             <ArrowLeft size={20} /> Back
@@ -36,27 +40,36 @@ const ProductCategory = () => {
       </div>
 
       <div className="container category-content-container">
-        <div className="products-grid">
-          {category.products.map((product, index) => (
-            <div className="product-card" key={index}>
-              <div className="product-image-wrapper">
-                <img src={product.image} alt={product.name} className="product-image" />
-                <div className="product-badge">{category.name}</div>
+        {category.products.length === 0 ? (
+          <div className="coming-soon-panel">
+            <Rocket size={36} />
+            <h3>Coming Soon</h3>
+            <p>We're finalizing the lineup for this category. Check back soon, or get in touch to discuss your requirements.</p>
+            <Link to="/#contact" className="btn btn-primary">Contact Us</Link>
+          </div>
+        ) : (
+          <div className="products-grid">
+            {category.products.map((product, index) => (
+              <div className="product-card" key={index}>
+                <div className="product-image-wrapper">
+                  <img src={product.image} alt={product.name} className="product-image" />
+                  <div className="product-badge">{category.name}</div>
+                </div>
+                <div className="product-content">
+                  <h3 className="product-title">{product.name}</h3>
+                  <ul className="product-specs">
+                    {product.specs.map((spec, sIndex) => (
+                      <li key={sIndex} className="spec-item">
+                        <span className="spec-label">{spec.label}</span>
+                        <span className="spec-value">{spec.value}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="product-content">
-                <h3 className="product-title">{product.name}</h3>
-                <ul className="product-specs">
-                  {product.specs.map((spec, sIndex) => (
-                    <li key={sIndex} className="spec-item">
-                      <span className="spec-label">{spec.label}</span>
-                      <span className="spec-value">{spec.value}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </main>
   );
