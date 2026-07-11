@@ -38,7 +38,7 @@ const Navbar = () => {
       ]
     },
     { name: 'Jobs', href: '/jobs' },
-    { name: 'Contact Us', href: '/#contact' },
+    { name: 'Contact Us', href: '/contact' },
   ];
 
   const toggleMobileDropdown = (name) => {

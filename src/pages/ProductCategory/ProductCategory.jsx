@@ -65,7 +65,7 @@ const ProductGroup = ({ products, badgeLabel, compact }) => {
         <Rocket size={compact ? 26 : 36} />
         <h3>Coming Soon</h3>
         <p>We're finalizing the lineup for this category. Check back soon, or get in touch to discuss your requirements.</p>
-        <Link to="/#contact" className="btn btn-primary">Contact Us</Link>
+        <Link to="/contact" className="btn btn-primary">Contact Us</Link>
       </div>
     );
   }
@@ -85,7 +85,7 @@ const ComingSoonCard = ({ label }) => (
     <span className="coming-soon-tag">{label}</span>
     <h3>Coming Soon</h3>
     <p>We're finalizing the lineup for this category. Check back soon, or get in touch to discuss your requirements.</p>
-    <Link to="/#contact" className="btn btn-primary">Contact Us</Link>
+    <Link to="/contact" className="btn btn-primary">Contact Us</Link>
   </div>
 );
 

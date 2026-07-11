@@ -7,6 +7,7 @@ import JobsPage from './pages/Jobs/JobsPage'
 import JobDetails from './pages/JobDetails/JobDetails'
 import ServiceDetails from './pages/ServiceDetails/ServiceDetails'
 import ProductCategory from './pages/ProductCategory/ProductCategory'
+import ContactPage from './pages/Contact/ContactPage'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/jobs/propulsion-engineer" element={<JobDetails />} />
         <Route path="/services/:serviceId" element={<ServiceDetails />} />
         <Route path="/products/:categoryId" element={<ProductCategory />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
     </>
