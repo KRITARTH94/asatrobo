@@ -77,8 +77,8 @@ const Hero = () => {
         <div className="container hero-container" ref={contentRef}>
           <div className="hero-content">
             <h1 className="hero-title">
-              <span className="highlight">Get your own</span> <br />
-              Customized Multicopters
+              <span className="highlight">Manufacturing UAV's and</span> <br />
+              Providing DaaS
             </h1>
           </div>
         </div>
