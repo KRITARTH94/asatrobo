@@ -36,16 +36,11 @@ const CategoryCard = ({ category }) => {
             <Rocket size={40} />
           </div>
         )}
-        {category.comingSoon && (
-          <span className="category-badge">{category.conceptImage ? 'Concept Render' : 'Coming Soon'}</span>
-        )}
+        {category.comingSoon && <span className="category-badge">Coming Soon</span>}
       </div>
       <div className="category-content">
         <h3 className="category-title">{category.name}</h3>
         <p className="category-tagline">{category.tagline}</p>
-        {category.conceptImage && (
-          <p className="category-concept-note">AI-generated concept render, not an actual product photo.</p>
-        )}
         <span className="category-link">
           View Products <ArrowRight size={16} />
         </span>

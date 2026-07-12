@@ -98,13 +98,6 @@
   margin-bottom: 1rem;
 }
 
-.category-concept-note {
-  font-size: 0.7rem;
-  font-style: italic;
-  color: var(--text-muted);
-  margin: -0.5rem 0 1rem 0;
-}
-
 .category-link {
   display: inline-flex;
   align-items: center;
