@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import { Cpu, Settings2, ShieldCheck, Users } from 'lucide-react';
+import { Cpu, Briefcase, Settings2, ShieldCheck, Users } from 'lucide-react';
 import { useTilt } from '../../hooks/useTilt';
 import heroImage from '../../assets/hero-drone-still.jpg';
 import './Hero.css';
 
 const highlights = [
   { icon: Cpu, label: 'IIT Kanpur Incubated', desc: 'Deep aerospace R&D roots' },
+  { icon: Briefcase, label: 'IIM Kozhikode (IIMK) Incubated', desc: 'Business & startup mentorship' },
   { icon: Settings2, label: '100% Custom Builds', desc: 'Engineered to your mission' },
   { icon: ShieldCheck, label: 'Drone as a Service', desc: 'Reliable DaaS operations' },
   { icon: Users, label: 'Industry Veterans', desc: 'Years of aerospace experience' },
