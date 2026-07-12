@@ -27,11 +27,13 @@ const Hero = () => {
     let mouseY = 0;
     let rafId;
 
-    // The source clip is a portrait recording pillarboxed into a 16:9 frame
-    // (black bars left/right), so it needs a much heavier zoom than a normal
-    // photo background to crop those bars out and keep the drone in frame.
+    // object-fit: cover already crops the portrait source to fill the
+    // landscape hero with no letterboxing, so this only needs a small
+    // amount of extra scale for the subtle "breathing" effect — a much
+    // larger zoom just upscales the video past its native resolution
+    // and makes it look blurry.
     const loop = (timestamp) => {
-      const zoom = 2.9 + 0.12 * (0.5 + 0.5 * Math.sin(timestamp * 0.00012));
+      const zoom = 1.15 + 0.05 * (0.5 + 0.5 * Math.sin(timestamp * 0.00012));
       const scrollOffset = window.scrollY * 0.3;
       bg.style.transform = `translate3d(0, ${scrollOffset}px, 0) scale(${zoom}) rotateX(${mouseY}deg) rotateY(${mouseX}deg)`;
       content.style.transform = `rotateX(${-mouseY * 0.4}deg) rotateY(${-mouseX * 0.4}deg)`;
