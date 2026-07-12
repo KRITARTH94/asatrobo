@@ -34,7 +34,6 @@ export const productCategories = [
     tagline: 'Compact multi-rotor platforms for agile, stable flight in tight spaces.',
     image: null,
     gridImage: '/products/quadcopter-concept.png',
-    comingSoon: true,
     products: []
   },
   {
