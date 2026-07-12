@@ -34,7 +34,17 @@ export const productCategories = [
     tagline: 'Compact multi-rotor platforms for agile, stable flight in tight spaces.',
     image: '/products/quadcopter-hero.jpg',
     gridImage: '/products/quadcopter-concept.png',
-    products: []
+    products: [
+      {
+        name: 'High Altitude Quadcopter',
+        specs: [
+          { label: 'Altitude', value: '4000m' },
+          { label: 'AUW', value: '10Kg' },
+          { label: 'Payload', value: '1Kg' },
+        ],
+        image: '/products/quadcopter-hero.jpg'
+      }
+    ]
   },
   {
     id: 'vtol',
