@@ -13,6 +13,15 @@
   padding: 1.5rem 1.75rem;
 }
 
+.hp-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  left: -9999px;
+}
+
 .contact-title {
   text-align: center;
   color: var(--primary);

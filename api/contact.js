@@ -1,5 +1,32 @@
 import nodemailer from 'nodemailer';
 
+const ALLOWED_ORIGINS = [
+  'https://asatrobo.com',
+  'https://www.asatrobo.com',
+  'https://asatrobo1.vercel.app',
+];
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_SHORT = 200;
+const MAX_LONG = 5000;
+
+// Simple per-instance rate limit: resets on cold start, best-effort only.
+// Not a substitute for a real store, but stops rapid-fire abuse for free.
+const hits = new Map();
+const RATE_LIMIT = 5;
+const RATE_WINDOW_MS = 10 * 60 * 1000;
+
+const isRateLimited = (ip) => {
+  const now = Date.now();
+  const entry = hits.get(ip);
+  if (!entry || now - entry.start > RATE_WINDOW_MS) {
+    hits.set(ip, { start: now, count: 1 });
+    return false;
+  }
+  entry.count += 1;
+  return entry.count > RATE_LIMIT;
+};
+
 const escapeHtml = (str) =>
   String(str)
     .replace(/&/g, '&amp;')
@@ -50,10 +77,40 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { fullName, companyName, email, phone, requirements } = req.body || {};
+  const origin = req.headers.origin;
+  if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+    return res.status(403).json({ error: 'Forbidden' });
+  }
+
+  const ip = (req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown').split(',')[0].trim();
+  if (isRateLimited(ip)) {
+    return res.status(429).json({ error: 'Too many requests, please try again later' });
+  }
+
+  const { fullName, companyName, email, phone, requirements, website } = req.body || {};
+
+  // Honeypot: a hidden field real users never see or fill. Bots that
+  // auto-fill every input trip this, and we quietly no-op on them.
+  if (website) {
+    return res.status(200).json({ success: true });
+  }
 
   if (!fullName || !companyName || !email || !phone || !requirements) {
     return res.status(400).json({ error: 'All fields are required' });
+  }
+
+  if (
+    fullName.length > MAX_SHORT ||
+    companyName.length > MAX_SHORT ||
+    phone.length > MAX_SHORT ||
+    email.length > MAX_SHORT ||
+    requirements.length > MAX_LONG
+  ) {
+    return res.status(400).json({ error: 'One or more fields are too long' });
+  }
+
+  if (!EMAIL_RE.test(email)) {
+    return res.status(400).json({ error: 'Invalid email address' });
   }
 
   const transporter = nodemailer.createTransport({

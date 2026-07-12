@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
-const initialForm = { fullName: '', companyName: '', email: '', phone: '', requirements: '' };
+const initialForm = { fullName: '', companyName: '', email: '', phone: '', requirements: '', website: '' };
 
 const Contact = ({ hideTitle }) => {
   const [form, setForm] = useState(initialForm);
@@ -39,6 +39,16 @@ const Contact = ({ hideTitle }) => {
             </div>
           ) : (
             <form className="contact-form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="website"
+                value={form.website}
+                onChange={handleChange}
+                className="hp-field"
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+              />
               <div className="form-row">
                 <div className="form-group">
                   <label className="form-label">Full Name <span className="required-mark">*</span></label>
