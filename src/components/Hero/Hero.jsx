@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Cpu, Briefcase, Settings2, ShieldCheck, Users } from 'lucide-react';
 import { useTilt } from '../../hooks/useTilt';
-import heroImage from '../../assets/hero-drone-still.jpg';
+import heroVideo from '../../assets/hero-drone-field.mp4';
 import './Hero.css';
 
 const highlights = [
@@ -65,12 +65,15 @@ const Hero = () => {
   return (
     <>
       <section className="hero" id="home" ref={heroRef}>
-        <img
+        <video
           className="hero-bg"
           ref={bgRef}
-          src={heroImage}
-          alt=""
-        />
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+        ></video>
         <div className="hero-overlay"></div>
         <div className="container hero-container" ref={contentRef}>
           <div className="hero-content">
