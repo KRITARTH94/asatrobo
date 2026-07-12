@@ -40,7 +40,7 @@ export const productCategories = [
     id: 'vtol',
     name: 'VTOL',
     tagline: 'Hybrid vertical take-off and landing aircraft combining fixed-wing efficiency with rotor agility.',
-    image: 'https://static.wixstatic.com/media/7177f3_be858df4f4234533a30a26e071956be0~mv2.png',
+    image: '/products/vtol-hero.jpg',
     gridImage: '/products/striver.png',
     products: [
       {
