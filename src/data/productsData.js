@@ -32,7 +32,7 @@ export const productCategories = [
     id: 'quadcopter',
     name: 'Quadcopter',
     tagline: 'Compact multi-rotor platforms for agile, stable flight in tight spaces.',
-    image: null,
+    image: '/products/quadcopter-hero.jpg',
     gridImage: '/products/quadcopter-concept.png',
     products: []
   },
