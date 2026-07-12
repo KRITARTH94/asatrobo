@@ -38,10 +38,10 @@ export const productCategories = [
       {
         name: 'High Altitude Quadcopter',
         specs: [
-          { label: 'Max Altitude', value: '4000m' },
           { label: 'AUW', value: '10Kg' },
-          { label: 'Payload', value: '1Kg' },
-          { label: 'Endurance', value: '55min' },
+          { label: 'Max Altitude', value: '4000m' },
+          { label: 'Endurance (no payload)', value: '55min' },
+          { label: 'Payload capacity', value: '1Kg' },
         ],
         image: '/products/quadcopter-concept.png'
       }
