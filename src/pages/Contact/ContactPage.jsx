@@ -1,13 +1,6 @@
 import React, { useEffect } from 'react';
-import { Cpu, Settings2, ShieldCheck } from 'lucide-react';
 import Contact from '../../components/Contact/Contact';
 import './ContactPage.css';
-
-const trustPoints = [
-  { icon: Cpu, text: 'IIT Kanpur & IIM Kozhikode Incubated' },
-  { icon: Settings2, text: '100% Custom UAV Builds' },
-  { icon: ShieldCheck, text: 'Reliable Drone as a Service' },
-];
 
 const ContactPage = () => {
   useEffect(() => {
@@ -24,18 +17,6 @@ const ContactPage = () => {
             Tell us about your mission requirements and our team will get back to you shortly.
           </p>
         </div>
-      </div>
-
-      <div className="contact-trust-strip">
-        {trustPoints.map((item, i) => {
-          const Icon = item.icon;
-          return (
-            <div className="contact-trust-item" key={i}>
-              <Icon size={18} />
-              <span>{item.text}</span>
-            </div>
-          );
-        })}
       </div>
 
       <Contact hideTitle />

@@ -35,37 +35,8 @@
   font-size: 1.05rem;
 }
 
-.contact-trust-strip {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  padding: 1.5rem 1.5rem;
-  background-color: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: var(--shadow-sm);
-}
-
-.contact-trust-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--text-dark);
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.contact-trust-item svg {
-  color: var(--secondary);
-  flex-shrink: 0;
-}
-
 @media (max-width: 768px) {
   .contact-page-title {
     font-size: 2rem;
-  }
-  .contact-trust-strip {
-    gap: 1.25rem 1.75rem;
   }
 }
