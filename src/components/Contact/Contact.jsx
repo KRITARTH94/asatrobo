@@ -61,7 +61,7 @@ const Contact = ({ hideTitle }) => {
               </div>
               <div className="form-group">
                 <label className="form-label">Product Requirements <span className="required-mark">*</span></label>
-                <textarea rows="5" name="requirements" value={form.requirements} onChange={handleChange} required className="form-input"></textarea>
+                <textarea rows="3" name="requirements" value={form.requirements} onChange={handleChange} required className="form-input"></textarea>
               </div>
               {status === 'error' && (
                 <p className="form-error">Something went wrong sending your message. Please try again.</p>
