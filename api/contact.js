@@ -20,7 +20,7 @@ const buildHtml = ({ fullName, companyName, email, phone, requirements }) => {
     <table role="presentation" width="100%" style="max-width:560px;margin:0 auto;border-collapse:collapse;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.08);">
       <tr>
         <td style="background-color:#121212;padding:24px 28px;">
-          <span style="font-size:20px;font-weight:700;color:#ffffff;">ASAT<span style="color:#e63946;">Robo</span></span>
+          <span style="font-size:20px;font-weight:700;color:#4c97cc;">ASAT<span style="color:#e10b0b;">Robo</span></span>
           <div style="margin-top:4px;font-size:13px;color:#c9c9cc;">New Product Inquiry</div>
         </td>
       </tr>
