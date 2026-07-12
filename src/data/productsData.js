@@ -41,6 +41,7 @@ export const productCategories = [
           { label: 'Altitude', value: '4000m' },
           { label: 'AUW', value: '10Kg' },
           { label: 'Payload', value: '1Kg' },
+          { label: 'Endurance', value: '55min' },
         ],
         image: '/products/quadcopter-concept.png'
       }
