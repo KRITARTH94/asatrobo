@@ -3,3 +3,69 @@
   min-height: 100vh;
   background-color: var(--bg-light);
 }
+
+.contact-page-hero {
+  background: linear-gradient(135deg, var(--primary-deep) 0%, var(--accent) 100%);
+  padding: 4.5rem 0 3.5rem;
+  text-align: center;
+  color: white;
+}
+
+.contact-page-hero .eyebrow-center {
+  color: #7ec4e8;
+}
+
+.contact-page-hero .eyebrow-center::before {
+  background-color: #7ec4e8;
+}
+
+.contact-page-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: white;
+  margin: 0.5rem 0 1rem;
+}
+
+.contact-page-lead {
+  max-width: 560px;
+  margin: 0 auto;
+  color: #d7dee3;
+  font-size: 1.05rem;
+}
+
+.contact-trust-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 1.5rem;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.contact-trust-item svg {
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .contact-page-title {
+    font-size: 2rem;
+  }
+  .contact-trust-strip {
+    gap: 1.25rem 1.75rem;
+  }
+}
