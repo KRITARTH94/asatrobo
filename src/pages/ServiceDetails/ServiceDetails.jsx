@@ -26,7 +26,7 @@ const ServiceDetails = () => {
   return (
     <main className="service-details-page">
       <div className="service-hero">
-        <div className="service-hero-bg" style={{ backgroundImage: `url(${service.image})` }}></div>
+        <div className="service-hero-bg" style={{ backgroundImage: `url(${service.heroImage || service.image})` }}></div>
         <div className="service-hero-content container">
           <button onClick={() => navigate(-1)} className="back-btn">
             <ArrowLeft size={20} /> Back

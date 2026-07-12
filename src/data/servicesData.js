@@ -30,6 +30,7 @@ export const servicesData = [
   {
     id: 'technical-consultancy',
     image: '/products/technical-consultancy.jpg',
+    heroImage: '/products/technical-consultancy-hero.jpg',
     title: 'Technical Consultancy',
     description: 'We provide technical consulting services to help you design and build the best UAV systems for your mission. Drawing on our IIT Kanpur-incubated aerospace R&D expertise, our team guides you through airframe selection, payload integration, avionics, and regulatory compliance — turning your concept into a flight-ready drone.',
     longDescription: 'ASATRobo\'s Technical Consultancy connects you directly with our aerospace engineers for end-to-end UAV design support — from initial concept and airframe selection to payload integration, avionics architecture, and flight testing. Whether you\'re a startup building your first prototype or an enterprise scaling an existing fleet, we help you avoid costly design mistakes, meet regulatory requirements, and arrive at a UAV system genuinely built for your mission.'
