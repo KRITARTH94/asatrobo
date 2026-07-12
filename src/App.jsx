@@ -8,6 +8,7 @@ import JobDetails from './pages/JobDetails/JobDetails'
 import ServiceDetails from './pages/ServiceDetails/ServiceDetails'
 import ProductCategory from './pages/ProductCategory/ProductCategory'
 import ContactPage from './pages/Contact/ContactPage'
+import NotFound from './pages/NotFound/NotFound'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/services/:serviceId" element={<ServiceDetails />} />
         <Route path="/products/:categoryId" element={<ProductCategory />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

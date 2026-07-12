@@ -1,0 +1,14 @@
+.not-found-page {
+  padding-top: var(--header-height);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-light);
+}
+
+.not-found-code {
+  font-size: 5rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
