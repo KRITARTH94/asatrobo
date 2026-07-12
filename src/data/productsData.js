@@ -42,7 +42,7 @@ export const productCategories = [
           { label: 'AUW', value: '10Kg' },
           { label: 'Payload', value: '1Kg' },
         ],
-        image: '/products/quadcopter-hero.jpg'
+        image: '/products/quadcopter-concept.png'
       }
     ]
   },
