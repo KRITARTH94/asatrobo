@@ -94,7 +94,6 @@ export const productCategories = [
           { label: 'Weight', value: '750gm' },
           { label: 'Dimension', value: '35x46x7cm' },
           { label: 'Battery', value: '8000mAh' },
-          { label: 'Load', value: '2kg' },
           { label: 'Max Altitude', value: '3000m' },
           { label: 'Empty Flight Time', value: '45min' },
           { label: 'Load Flight time', value: '15min' },
