@@ -109,6 +109,7 @@ export const productCategories = [
             name: '7" FPV',
             specs: [
               { label: 'Weight', value: '500g' },
+              { label: 'Dimensions', value: '21 x 10.5 x 4cm' },
             ],
             image: '/products/fpv-7inch.webp'
           }
