@@ -107,7 +107,9 @@ export const productCategories = [
         products: [
           {
             name: '7" FPV',
-            specs: [],
+            specs: [
+              { label: 'Weight', value: '500g' },
+            ],
             image: '/products/fpv-7inch.webp'
           }
         ]
