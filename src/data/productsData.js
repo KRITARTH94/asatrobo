@@ -105,7 +105,27 @@ export const productCategories = [
     ],
     subSections: [
       { id: '7-inch', name: '7" FPV', comingSoon: true, products: [] },
-      { id: '10-inch', name: '10" FPV', comingSoon: true, products: [] }
+      {
+        id: '10-inch',
+        name: '10" FPV',
+        products: [
+          {
+            name: 'FLH10 10" FPV',
+            specs: [
+              { label: 'Unfolded Size', value: '52.5 x 63.5cm' },
+              { label: 'Wheelbase', value: '31.5 x 41.5cm' },
+              { label: 'Flight Controller', value: 'F405, 8.5g' },
+              { label: 'ESC', value: 'BLHELI-S, 60A cont. / 70A burst (10s)' },
+              { label: 'Motor', value: '3115, 900KV' },
+              { label: 'Propeller', value: '1050R, 3-blade' },
+              { label: 'VTX', value: '5.8GHz, up to 2.5W (2500mW)' },
+              { label: 'Receiver', value: 'ExpressLRS 915MHz' },
+              { label: 'Camera', value: 'Thermal (256x192) or 1500TVL Analog FPV' },
+            ],
+            image: '/products/fpv-10inch.jpg'
+          }
+        ]
+      }
     ]
   },
   {

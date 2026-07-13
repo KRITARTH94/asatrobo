@@ -47,7 +47,13 @@ const ProductCategory = () => {
               <ProductCard product={product} badgeLabel={category.name} key={`product-${index}`} />
             ))}
             {category.subSections.map((sub) => (
-              <ComingSoonCard label={sub.name} key={sub.id} />
+              sub.products && sub.products.length > 0 ? (
+                sub.products.map((product, index) => (
+                  <ProductCard product={product} badgeLabel={sub.name} key={`${sub.id}-${index}`} />
+                ))
+              ) : (
+                <ComingSoonCard label={sub.name} key={sub.id} />
+              )
             ))}
           </div>
         ) : (
