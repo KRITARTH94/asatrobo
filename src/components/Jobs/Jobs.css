@@ -1,13 +1,53 @@
 .jobs-section {
   background-color: var(--bg-light);
-  padding: 5rem 0;
+  padding-bottom: 5rem;
   position: relative;
   overflow: hidden;
 }
 
-.jobs-header {
-  text-align: center;
+.jobs-hero {
+  position: relative;
+  padding: 6rem 0;
   margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.jobs-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/products/careers-hero.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  z-index: 0;
+}
+
+.jobs-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.65) 50%, rgba(10, 10, 10, 0.85) 100%);
+}
+
+.jobs-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.jobs-header .eyebrow {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.jobs-header .section-title {
+  color: white;
+}
+
+.jobs-header .section-title::after {
+  background-color: white;
+}
+
+.jobs-header .section-subtitle {
+  color: #e2e8f0;
 }
 
 .section-subtitle {

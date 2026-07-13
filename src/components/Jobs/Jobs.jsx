@@ -6,13 +6,16 @@ import './Jobs.css';
 const Jobs = () => {
   return (
     <section className="section jobs-section" id="jobs">
-      <div className="container">
-        <div className="jobs-header">
+      <div className="jobs-hero">
+        <div className="jobs-hero-bg"></div>
+        <div className="jobs-header container">
           <span className="eyebrow eyebrow-center">Join The Team</span>
           <h2 className="section-title">Career Opportunities</h2>
           <p className="section-subtitle">Join our team of pioneers in the UAS/Drone field</p>
         </div>
+      </div>
 
+      <div className="container">
         <div className="jobs-grid">
           <div className="job-card">
             <div className="job-card-header">
