@@ -96,7 +96,6 @@ export const productCategories = [
           { label: 'Battery', value: '8000mAh' },
           { label: 'Max Altitude', value: '3000m' },
           { label: 'Flight Time', value: '15min' },
-          { label: 'Take Off', value: 'Vertical' },
         ],
         image: '/products/fpv-drone.png'
       }
