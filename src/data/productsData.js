@@ -127,6 +127,8 @@ export const productCategories = [
               { label: 'Wheelbase', value: '31.5 x 41.5cm' },
               { label: 'Altitude', value: '3000m' },
               { label: 'Payload', value: '500g' },
+              { label: 'Flight Time', value: '10min' },
+              { label: 'Battery', value: '8000mAh 80C' },
             ],
             image: '/products/fpv-10inch.jpg'
           }
