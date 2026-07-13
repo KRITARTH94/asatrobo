@@ -63,6 +63,10 @@
   color: white;
 }
 
+.no-transform {
+  text-transform: none;
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;

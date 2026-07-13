@@ -81,7 +81,7 @@ const Hero = () => {
           <div className="hero-content">
             <h1 className="hero-title">
               <span className="highlight">Manufacturing UAV's and</span> <br />
-              Providing DaaS
+              Providing <span className="no-transform">DaaS</span>
             </h1>
           </div>
         </div>
