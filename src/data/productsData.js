@@ -109,6 +109,7 @@ export const productCategories = [
           {
             name: '10" FPV',
             specs: [
+              { label: 'Weight', value: '1.5kg' },
               { label: 'Unfolded Size', value: '52.5 x 63.5cm' },
               { label: 'Wheelbase', value: '31.5 x 41.5cm' },
               { label: 'Flight Controller', value: 'F405, 8.5g' },
