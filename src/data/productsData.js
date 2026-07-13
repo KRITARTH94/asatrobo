@@ -110,6 +110,9 @@ export const productCategories = [
             specs: [
               { label: 'Weight', value: '500g' },
               { label: 'Dimensions', value: '21 x 10.5 x 4cm' },
+              { label: 'Max Altitude', value: '2000m' },
+              { label: 'Endurance', value: '15min' },
+              { label: 'Battery', value: '8000mAh' },
             ],
             image: '/products/fpv-7inch.webp'
           }
