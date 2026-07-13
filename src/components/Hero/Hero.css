@@ -60,7 +60,7 @@
 }
 
 .highlight {
-  color: var(--secondary);
+  color: white;
 }
 
 @keyframes fadeUp {
