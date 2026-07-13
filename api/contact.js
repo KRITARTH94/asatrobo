@@ -1,5 +1,7 @@
 import nodemailer from 'nodemailer';
 
+const CONTACT_EMAIL = 'vikram@asatrobo.com';
+
 const ALLOWED_ORIGINS = [
   'https://asatrobo.com',
   'https://www.asatrobo.com',
@@ -114,17 +116,19 @@ export default async function handler(req, res) {
   }
 
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    secure: Number(process.env.SMTP_PORT) === 465,
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"ASATRobo Website" <${process.env.GMAIL_USER}>`,
-      to: process.env.GMAIL_USER,
+      from: `"ASATRobo Website" <${CONTACT_EMAIL}>`,
+      to: CONTACT_EMAIL,
       replyTo: email,
       subject: `New inquiry from ${fullName} (${companyName})`,
       text: `Full Name: ${fullName}\nCompany Name: ${companyName}\nEmail Address: ${email}\nPhone Number: ${phone}\n\nProduct Requirements:\n${requirements}`,
