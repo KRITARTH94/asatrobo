@@ -101,7 +101,23 @@ export const productCategories = [
       }
     ],
     subSections: [
-      { id: '7-inch', name: '7" FPV', comingSoon: true, products: [] },
+      {
+        id: '7-inch',
+        name: '7" FPV',
+        products: [
+          {
+            name: '7" FPV',
+            specs: [
+              { label: 'Weight', value: '500g' },
+              { label: 'Dimensions', value: '21 x 10.5 x 4cm' },
+              { label: 'Max Altitude', value: '2000m' },
+              { label: 'Endurance', value: '15min' },
+              { label: 'Battery', value: '8000mAh' },
+            ],
+            image: '/products/fpv-7inch.webp'
+          }
+        ]
+      },
       {
         id: '10-inch',
         name: '10" FPV',
@@ -114,6 +130,8 @@ export const productCategories = [
               { label: 'Wheelbase', value: '31.5 x 41.5cm' },
               { label: 'Altitude', value: '3000m' },
               { label: 'Payload', value: '500g' },
+              { label: 'Flight Time', value: '10min' },
+              { label: 'Battery', value: '8000mAh 80C' },
             ],
             image: '/products/fpv-10inch.jpg'
           }
