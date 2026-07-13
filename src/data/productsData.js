@@ -101,7 +101,17 @@ export const productCategories = [
       }
     ],
     subSections: [
-      { id: '7-inch', name: '7" FPV', comingSoon: true, products: [] },
+      {
+        id: '7-inch',
+        name: '7" FPV',
+        products: [
+          {
+            name: '7" FPV',
+            specs: [],
+            image: '/products/fpv-7inch.webp'
+          }
+        ]
+      },
       {
         id: '10-inch',
         name: '10" FPV',

@@ -13,38 +13,58 @@ const highlights = [
 
 const Hero = () => {
   const heroRef = useRef(null);
+  const bgRef = useRef(null);
   const contentRef = useRef(null);
 
   useEffect(() => {
     const hero = heroRef.current;
+    const bg = bgRef.current;
     const content = contentRef.current;
-    if (!hero || !content) return;
+    if (!hero || !bg || !content) return;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let rafId;
+
+    // Slow "Ken Burns" breathing zoom on the background, layered with
+    // interactive mouse-tilt and scroll parallax.
+    const loop = (timestamp) => {
+      const zoom = 1.12 + 0.05 * (0.5 + 0.5 * Math.sin(timestamp * 0.00012));
+      const scrollOffset = window.scrollY * 0.3;
+      bg.style.transform = `translate3d(0, ${scrollOffset}px, 0) scale(${zoom}) rotateX(${mouseY}deg) rotateY(${mouseX}deg)`;
+      content.style.transform = `rotateX(${-mouseY * 0.4}deg) rotateY(${-mouseX * 0.4}deg)`;
+      rafId = requestAnimationFrame(loop);
+    };
 
     const handleMouseMove = (e) => {
       const rect = hero.getBoundingClientRect();
       const relX = (e.clientX - rect.left) / rect.width - 0.5;
       const relY = (e.clientY - rect.top) / rect.height - 0.5;
-      const mouseX = relX * 8;
-      const mouseY = relY * -8;
-      content.style.transform = `rotateX(${-mouseY * 0.4}deg) rotateY(${-mouseX * 0.4}deg)`;
+      mouseX = relX * 8;
+      mouseY = relY * -8;
     };
 
     const handleMouseLeave = () => {
-      content.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      mouseX = 0;
+      mouseY = 0;
     };
 
     hero.addEventListener('mousemove', handleMouseMove);
     hero.addEventListener('mouseleave', handleMouseLeave);
+    rafId = requestAnimationFrame(loop);
 
     return () => {
       hero.removeEventListener('mousemove', handleMouseMove);
       hero.removeEventListener('mouseleave', handleMouseLeave);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
   return (
     <>
       <section className="hero" id="home" ref={heroRef}>
+        <div className="hero-bg" ref={bgRef}></div>
+        <div className="hero-overlay"></div>
         <div className="container hero-container" ref={contentRef}>
           <div className="hero-content">
             <h1 className="hero-title">
