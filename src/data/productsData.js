@@ -110,7 +110,7 @@ export const productCategories = [
         name: '10" FPV',
         products: [
           {
-            name: 'FLH10 10" FPV',
+            name: '10" FPV',
             specs: [
               { label: 'Unfolded Size', value: '52.5 x 63.5cm' },
               { label: 'Wheelbase', value: '31.5 x 41.5cm' },
