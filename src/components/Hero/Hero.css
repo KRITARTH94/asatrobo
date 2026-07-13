@@ -19,7 +19,7 @@
   height: 100%;
   background-image: url('../../assets/hero-uav.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 26%;
   transform: scale(1.12);
   transform-style: preserve-3d;
   will-change: transform;
