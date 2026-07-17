@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Contact.css';
 
 const initialForm = { fullName: '', companyName: '', email: '', phone: '', requirements: '', website: '' };
+const REQUEST_TIMEOUT_MS = 15000;
 
 const Contact = ({ hideTitle }) => {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
+  const [errorMessage, setErrorMessage] = useState('');
+  const inFlight = useRef(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -13,17 +16,45 @@ const Contact = ({ hideTitle }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (inFlight.current) return;
+    inFlight.current = true;
     setStatus('sending');
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
     try {
       const res = await fetch(`${import.meta.env.VITE_CONTACT_API_URL || '/api/contact'}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
+        signal: controller.signal,
       });
-      if (!res.ok) throw new Error('Request failed');
+
+      if (!res.ok) {
+        let message = 'Something went wrong sending your message. Please try again.';
+        try {
+          const data = await res.json();
+          if (data?.error) message = data.error;
+        } catch {
+          // Non-JSON error response — keep the generic message.
+        }
+        setErrorMessage(message);
+        setStatus('error');
+        return;
+      }
+
       setStatus('sent');
-    } catch {
+    } catch (err) {
+      setErrorMessage(
+        err.name === 'AbortError'
+          ? 'The request timed out. Please check your connection and try again.'
+          : 'Something went wrong sending your message. Please try again.'
+      );
       setStatus('error');
+    } finally {
+      clearTimeout(timeout);
+      inFlight.current = false;
     }
   };
 
@@ -74,7 +105,7 @@ const Contact = ({ hideTitle }) => {
                 <textarea rows="3" name="requirements" value={form.requirements} onChange={handleChange} required className="form-input"></textarea>
               </div>
               {status === 'error' && (
-                <p className="form-error">Something went wrong sending your message. Please try again.</p>
+                <p className="form-error">{errorMessage}</p>
               )}
               <button type="submit" className="submit-btn" disabled={status === 'sending'}>
                 {status === 'sending' ? 'Sending...' : 'Submit Inquiry'}
